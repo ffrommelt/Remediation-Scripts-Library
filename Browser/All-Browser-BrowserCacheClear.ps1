@@ -4,8 +4,11 @@ try{
 
     #write-output $ARGS
     # Defining Arguments to be passed into variables to execute actions
-    $BROWSER_NAME = $ARGS[0]
-    $OS_NAME = $ARGS[1]
+    # As we do only support one argument we need to separate the single argument by ";" and the split them up here
+    $arguments = $args[0].split(";")
+	 
+    $BROWSER_NAME = $arguments[0]
+    $OS_NAME = $arguments[1]
 
     #Setting Global Result Varaible
     $result = ""
